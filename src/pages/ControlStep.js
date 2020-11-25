@@ -6,18 +6,22 @@ export class ControlPage extends Component {
 
     }
 
+    curStepChange = ()=>{
+
+    }
+
     render() {
         return (
             <Container>
                 <Row className="mt-5">
                     <Col md="1">
-                        <Button className="btn" id="prev" onClick={this.props.prevStep}>Prev</Button>
+                        <Button className="btn" onClick={this.props.controlStep.previousStep}>Prev</Button>
                     </Col>
                     <Col md="2">
-                        <Input id="step_counter" value={this.props.currentStep}></Input>
+                        <Input value={this.props.controlStep.currentStep} onChange={()=> this.curStepChange()}></Input>
                     </Col>
                     <Col md="1">
-                        <Button className="btn" id="next" onClick={this.props.nextStep}>Next</Button>
+                        <Button className="btn" onClick={this.props.controlStep.nextStep}>Next</Button>
                     </Col>
                 </Row>
             </Container>
